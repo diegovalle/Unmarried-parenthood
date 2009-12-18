@@ -7,9 +7,12 @@ Requirements
 
 To run
 -------
-Be sure to change the working directory to whateve it is in your machine
+Be sure to change the working directory to whatever it is in your machine
 
+Output
+-------
+A png chart
 
 Author
 -----
-[Diego Valle] [github.com/diegovalle]
+[Diego Valle] (http://github.com/diegovalle)
