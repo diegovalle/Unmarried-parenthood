@@ -2,7 +2,7 @@ A quick an dirty program to calculate unmarried parenthood statistics in Mexico 
 
 Requirements
 ------------
-* R >= 10.0 since I gzipped the .csv file with the data
+* R >= 2.10 since I gzipped the .csv file with the data
 
 To run
 -------
