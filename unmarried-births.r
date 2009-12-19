@@ -5,7 +5,8 @@ library(ggplot2)
 library(Hmisc)
 
 #Change this as appropiate
-setwd("C:/Documents and Settings/Diego/My Documents/docs/personal/Math/births/unmarried")
+wd <- "C:/Documents and Settings/Diego/My Documents/docs/personal/Math/births/unmarried"
+setwd(wd)
 
 #Cleanup the csv file from the INEGI
 cleandata <- function(births, ne = T) {
@@ -35,7 +36,7 @@ cleandata <- function(births, ne = T) {
 }
 
 #############################################################################
-#Chart for percentage of births to unmarried mother in Mexico
+#Chart for percentage of births to unmarried mothers in Mexico
 #and for US Hispanics
 ############################################################################
 #Data file with all births *registered* in Mexico in a given year
@@ -48,13 +49,14 @@ unmarried.df <- ddply(births2006, .(Year.of.Birth),
 #Data for Hispanics in the US from
 #http://www.cdc.gov/nchs/data/nvsr/nvsr57/nvsr57_12.pdf
 hispanic <- c(29.5,31.6, 32.6, 34, 35.5, 36.7, 38.5, 39.1, 40, 43.1, 40.8, 40.7, 
-40.9, 41.6, 42.2, 42.7, 42.5, 43.5, 45,46.4,48,49.9)/100           #,49.9,51.3
+40.9, 41.6, 42.2, 42.7, 42.5, 43.5, 45,46.4,48,49.9)/100           #51.3
 unmarried.df$hispanic <- hispanic
 colnames(unmarried.df) <- c("Year.of.Birth", "Mexico", "US.Hispanics")
 ggplot(melt(unmarried.df,id="Year.of.Birth"), 
       aes(Year.of.Birth,value, group=variable, color=variable)) +
       geom_line(size=1) +
-      scale_y_continuous(formatter="percent")
+      scale_y_continuous(formatter="percent") + 
+      opts(title="Percentage of Births to Unmarried Mothers in Mexico")
 dev.print(png,"Births to unmarried mothers.png", width=900, height=600)
 
 ##############################################################################
@@ -101,7 +103,7 @@ countries<-c("Korea", "Japan", "Greece", "Cyprus", "Mexico", "Switzerland",
 "Belgium", "Netherlands", "Finland", "Latvia", "United Kingdom", 
 "Denmark", "New Zealand", "Slovenia", "Bulgaria", "France", "Norway", 
 "Sweden", "Estonia", "Iceland")
-unmmx <- 49.9    #(2006 for mexico) there's a mistake and it's not 10%
+unmmx <- 49.0    #(2006 for mexico) there's a mistake and it's not 10%
 perunm <- c(1.5, 2.1, 5, 5.6, unmmx, 16.2, 19.5, 20.7, 24.5, 24.9, 28.4, 28.8, 
 29.2, 30, 30.7, 31.6, 32.2, 33.2, 34.5, 37.5, 38.2, 38.5, 39, 
 39.7, 40.6, 43, 43.7, 46.1, 47.2, 48.1, 50.2, 50.4, 54.5, 54.7, 

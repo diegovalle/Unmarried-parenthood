@@ -1,9 +1,8 @@
-A quick an dirty program to calculate the unmarried parenthood rate
-in Mexico and compare it with the Hispanic rate in the US.
+A quick an dirty program to calculate unmarried parenthood statistics in Mexico from INEGI data
 
 Requirements
 ------------
-* R >= 10.0 since I compressed the csv file with the data
+* R >= 10.0 since I gzipped the .csv file with the data
 
 To run
 -------
@@ -11,7 +10,9 @@ Be sure to change the working directory to whatever it is in your machine
 
 Output
 -------
-A png chart
+*A png chart of the percentage of unmarried births in Mexico and for US Hispanics
+*A png chart of births in Mexico by Marital Status
+*A png chart comparing Mexico to other OECD countries
 
 Author
 -----
