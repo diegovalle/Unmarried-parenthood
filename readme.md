@@ -10,9 +10,9 @@ Be sure to change the working directory to whatever it is in your machine
 
 Output
 -------
-*A png chart of the percentage of unmarried births in Mexico and for US Hispanics
-*A png chart of births in Mexico by Marital Status
-*A png chart comparing Mexico to other OECD countries
+* A png chart of the percentage of unmarried births in Mexico and for US Hispanics
+* A png chart of births in Mexico by Marital Status
+* A png chart comparing Mexico to other OECD countries
 
 Author
 -----
