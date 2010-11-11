@@ -4,10 +4,6 @@
 library(ggplot2)
 library(Hmisc)
 
-#Change this as appropiate
-wd <- "C:/Documents and Settings/Diego/My Documents/docs/personal/Math/births/unmarried"
-setwd(wd)
-
 #Cleanup the csv file from the INEGI
 cleandata <- function(births, ne = T) {
   if (ne) {
@@ -40,7 +36,7 @@ cleandata <- function(births, ne = T) {
 #and for US Hispanics
 ############################################################################
 #Data file with all births *registered* in Mexico in a given year
-#data source: Estadísticas Vitales INEGI
+#data source: Estadï¿½sticas Vitales INEGI
 births<-read.csv("unmarried.csv.gz")
 births2006 <- cleandata(births)
 unmarried.df <- ddply(births2006, .(Year.of.Birth), 
